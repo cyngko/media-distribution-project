@@ -10,10 +10,8 @@
     sans-serif;
   --hightlightFont: 'Libre Caslon Display', serif;
 }
-
-h1,
-h2 {
-  font-weight: 200;
+h1 {
+  font-size: 4vw;
 }
 h2 {
   font-size: 3vw;
@@ -37,6 +35,7 @@ h2::before {
   padding: 0;
   font-family: var(--bodyFont);
   scroll-behavior: smooth;
+  text-transform: uppercase;
 }
 body {
   background-color: var(--dark);
@@ -117,7 +116,6 @@ header a {
 header nav a {
   margin: 0 15px;
   text-decoration: none;
-  text-transform: uppercase;
   padding: 5px;
   border-radius: 5px;
   -webkit-transition: all 400ms ease-out;
@@ -235,22 +233,24 @@ main {
 }
 
 /* About */
-#about {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+
+#about h1 {
+  position: relative;
+  transform: rotate(-90deg);
+}
+#about h1::before {
+  content: '001.';
+  font-family: var(--hightlightFont);
+  font-style: italic;
+  position: absolute;
+  font-size: 2vw;
+  bottom: 100%;
 }
 #slogan {
-  text-transform: uppercase;
-  font-size: 7vh;
-  text-align: center;
+  width: 50%;
+  font-weight: 200;
+  font-size: 3vw;
+  line-height: 4vw;
 }
 #slogan a {
   color: var(--highlightColor);
@@ -272,6 +272,9 @@ main {
 /* Work */
 #work {
   padding: 0 3%;
+}
+.fa-arrow-right {
+  margin-right: 1rem;
 }
 .workCards {
   width: 100%;
@@ -310,7 +313,6 @@ main {
   font-size: 1vw;
   position: absolute;
   color: var(--dark);
-  text-transform: uppercase;
   font-style: italic;
   font-weight: 300;
   width: 100%;
@@ -362,7 +364,7 @@ main {
   position: absolute;
   color: var(--dark);
   margin-left: 1.5em;
-  text-transform: uppercase;
+
   background: var(--white);
   font-size: 1.5vw;
   font-weight: 400;
@@ -394,7 +396,8 @@ main {
 }
 
 /* Contact */
-#contact {
+#contact,
+#about {
   height: 100vh;
   width: 94%;
   margin: 0 5%;
@@ -410,13 +413,13 @@ main {
 #contact h1 {
   position: relative;
   font-weight: bold;
-  font-size: 3vw;
+  /* font-size: 3vw; */
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
 #contact h1::before {
-  content: '003 //';
+  content: '003.';
   font-family: var(--hightlightFont);
   position: absolute;
   font-style: italic;
@@ -424,7 +427,6 @@ main {
 }
 .contactContent {
   width: 50%;
-  text-transform: uppercase;
 }
 .contactText {
   position: relative;
@@ -461,7 +463,7 @@ main {
   position: relative;
 }
 .contactCTAContent svg {
-  margin-right: 5em;
+  margin-right: 2rem;
 }
 .contactCTAContent span {
   font-weight: bold;
@@ -479,13 +481,7 @@ footer {
   margin: 2em 6%;
 }
 footer h4 {
-  text-transform: uppercase;
   margin-bottom: 12px;
-}
-footer p,
-footer a,
-footer li {
-  text-transform: uppercase;
 }
 .footerLinks {
   display: -webkit-box;
@@ -607,12 +603,27 @@ footer a:hover {
     width: 85%;
   }
   /* About Section */
-  #about {
+  #about,
+  #contact {
     padding: 0 10%;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #about h1,
+  #contact h1 {
+    transform: rotate(0deg);
+    font-size: 7vw;
+    text-align: left;
+    width: 100%;
+  }
+  #about h1::before,
+  #contact h1::before {
+    font-size: 4vw;
   }
   #slogan {
     text-align: left;
     font-size: 4vw;
+    width: 100%;
   }
   /* Work Section */
   #nftCollectibles {
@@ -634,9 +645,7 @@ footer a:hover {
   }
 
   /* Contact */
-  #contact h1 {
-    font-size: 4vw;
-  }
+
   .contactText {
     font-size: 3vw;
     line-height: 4vw;
@@ -698,18 +707,17 @@ footer a:hover {
   }
 
   /* Contact Section */
-  #contact {
+  #contact,
+  #about {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
     height: calc(100vh - 8vh);
   }
-  #contact h1 {
-    display: none;
-  }
+
   .contactContent {
-    width: 85%;
+    width: 100%;
   }
   .contactText,
   #slogan {

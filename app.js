@@ -82,11 +82,22 @@ document.querySelector('#copyright-year').innerText = new Date().getFullYear();
 // Custom Mouse Pointer
 
 if (window.innerWidth > 1024) {
-  init_pointer({
-    pointerColor: '#35ffa1', // Css color
-    ringSize: 10, // Pixels
-    ringClickSize: 10, // Pixels when clicking
-  });
+  let pointerJSScript = document.createElement('script');
+  pointerJSScript.src = 'https://seattleowl.com/pointer.js/pointer.js';
+  document.head.appendChild(pointerJSScript);
+
+  let pointerJSStyle = document.createElement('link');
+  pointerJSStyle.href = 'https://seattleowl.com/pointer.js/pointer.css';
+  pointerJSStyle.rel = 'stylesheet';
+  document.head.appendChild(pointerJSStyle);
+
+  pointerJSScript.onload = () => {
+    init_pointer({
+      pointerColor: '#35ffa1', // Css color
+      ringSize: 10, // Pixels
+      ringClickSize: 10, // Pixels when clicking
+    });
+  };
 }
 
 // Lazy Load Images
