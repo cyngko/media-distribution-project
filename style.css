@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
 :root {
-  --dark: #000;
+  --dark: rgb(21, 21, 21);
   --white: #ffffff;
   --highlightColor: #35ffa1;
   --bodyFont: 'Almarai', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
+  --hightlightFont: 'Libre Caslon Display', serif;
 }
 
 h1,
@@ -21,10 +23,10 @@ h2::before {
   content: '';
   width: 45%;
   position: absolute;
-  bottom: -0px;
+  bottom: -50%;
   left: -10%;
   height: 2px;
-  background-color: var(--highlightColor);
+  background-color: var(--white);
   -webkit-transition: all 300ms;
   -o-transition: all 300ms;
   transition: all 300ms;
@@ -72,6 +74,7 @@ a {
   transform: translateY(-50%);
   width: 60%;
 }
+
 /* Navigation */
 .mobileMenuContainer {
   display: none;
@@ -354,10 +357,10 @@ main {
   color: var(--dark);
   margin-left: 1.5em;
   text-transform: uppercase;
-  background: var(--highlightColor);
+  background: var(--white);
   font-size: 1.5vw;
   font-weight: 400;
-  padding: 4px 8px;
+  padding: 12px 20px;
   border-radius: 5px;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -399,21 +402,44 @@ main {
   align-items: center;
 }
 #contact h1 {
+  position: relative;
+  font-weight: bold;
   font-size: 3vw;
   -webkit-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+#contact h1::before {
+  content: '003 //';
+  font-family: var(--hightlightFont);
+  position: absolute;
+  font-style: italic;
+  bottom: 100%;
 }
 .contactContent {
   width: 50%;
   text-transform: uppercase;
 }
 .contactText {
+  position: relative;
+  font-style: italic;
   font-weight: 200;
   font-size: 2vw;
   line-height: 3vw;
-  margin-bottom: 40px;
+  margin-bottom: 3vw;
 }
+.contactCTAContent::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: -50%;
+  height: 2px;
+  background-color: var(--white);
+  -webkit-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+
 .contactCTA {
   color: var(--white);
 }
@@ -427,9 +453,10 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  position: relative;
 }
 .contactCTAContent svg {
-  margin-right: 1.5rem;
+  margin-right: 5em;
 }
 .contactCTAContent span {
   font-weight: bold;
@@ -464,12 +491,16 @@ footer li {
   margin-right: 4em;
   margin-bottom: 4rem;
 }
+.footerLinkContainer h4 {
+  margin-bottom: 2em;
+}
 .footerLinkContainer:last-child {
   margin-right: 0;
 }
 #copyright {
   font-weight: 200;
   font-size: 1vw;
+  color: rgb(66, 66, 66);
 }
 footer ul {
   list-style: none;
@@ -497,7 +528,10 @@ footer a:hover {
 /* Large Desktop Screens */
 @media only screen and (min-width: 1281px) {
   header nav a,
-  .logo {
+  .logo,
+  #copyright,
+  .socials,
+  .footerLinkContainer {
     font-size: 0.75vw;
   }
 }
