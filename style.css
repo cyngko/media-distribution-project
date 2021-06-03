@@ -48,6 +48,7 @@ a {
 }
 .siteContainer {
   width: 100%;
+  height: 100%;
 }
 header nav a,
 .logo,
@@ -228,8 +229,10 @@ main {
   transform: translate(-50%, -50%);
 }
 #about,
-#contact {
+#contact,
+#work {
   padding: 5% 3%;
+  scroll-snap-align: start;
 }
 
 /* About */
@@ -353,7 +356,7 @@ main {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  /* height: 100vh; */
+  margin-top: 5rem;
   padding-top: 0;
 }
 #nftCollectibles h2 {
@@ -599,8 +602,8 @@ header nav a,
     padding-top: 1em;
     mix-blend-mode: normal;
   }
-  header {
-    /* font-size: 1rem; */
+  .preloader {
+    height: calc(100vh - 8vh);
   }
 
   .menuLinks {
