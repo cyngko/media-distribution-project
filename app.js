@@ -69,7 +69,7 @@ window.onscroll = function () {
   }
   prevScrollpos = currentScrollpos;
   if (prevScrollpos > innerHeight) {
-    navigation.style.backgroundColor = 'rgba(21, 21, 21, 0.9)';
+    navigation.style.backgroundColor = 'rgba(11, 11, 11, 0.9)';
     navigation.style.mixBlendMode = 'initial';
   } else {
     navigation.style.backgroundColor = '';

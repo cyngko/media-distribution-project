@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
 :root {
-  --dark: rgb(21, 21, 21);
+  /* --dark: rgb(21, 21, 21); */
+  --dark: rgb(11, 11, 11);
   --white: #ffffff;
   --highlightColor: #35ffa1;
   --bodyFont: 'Almarai', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
@@ -117,7 +118,6 @@ header nav a {
   margin: 0 15px;
   text-decoration: none;
   padding: 5px;
-  border-radius: 5px;
   -webkit-transition: all 400ms ease-out;
   -o-transition: all 400ms ease-out;
   transition: all 400ms ease-out;
@@ -286,7 +286,7 @@ main {
 }
 .imageContainer {
   position: relative;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   width: calc(25% - 26.25px);
   margin-right: 35px;
@@ -353,7 +353,7 @@ main {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
   padding-top: 0;
 }
 #nftCollectibles h2 {
@@ -472,13 +472,13 @@ main {
 
 /* Footer */
 #footerLine {
-  margin: 3%;
+  margin: 3% 0;
   height: 1px;
   background: #111;
   border: none;
 }
 footer {
-  margin: 2em 6%;
+  margin: 2vw 6%;
 }
 footer h4 {
   margin-bottom: 12px;
@@ -487,9 +487,10 @@ footer h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .footerLinkContainer {
-  margin-right: 4em;
   margin-bottom: 4rem;
 }
 .footerLinkContainer h4 {
@@ -498,6 +499,61 @@ footer h4 {
 .footerLinkContainer:last-child {
   margin-right: 0;
 }
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: clamp(0.75rem, 1vw, 1vw);
+}
+
+/* Used to make sure font awesome icons render reliably */
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footerBottom a::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f062';
+  margin-left: 0.75rem;
+  transform-origin: bottom;
+  position: absolute;
+}
+.footerBottom a:hover::after {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+/* Bounce Animation of Back to Top Arrow */
+@keyframes bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    transform: scale(0.9, 1.1) translateY(-20px);
+  }
+  50% {
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(-1px);
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
 #copyright {
   font-weight: 200;
   font-size: 1vw;
@@ -520,6 +576,14 @@ footer a:hover {
   color: var(--highlightColor);
 }
 
+header nav a,
+.logo,
+#copyright,
+.socials,
+.footerLinkContainer {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
 /* Responsiveness + Other */
 @media screen and(prefers-reduced-motion: reduce) {
   * {
@@ -527,15 +591,6 @@ footer a:hover {
   }
 }
 /* Large Desktop Screens */
-@media only screen and (min-width: 1281px) {
-  header nav a,
-  .logo,
-  #copyright,
-  .socials,
-  .footerLinkContainer {
-    font-size: 0.75vw;
-  }
-}
 
 /* Tablet Size */
 @media only screen and (max-width: 1024px) {
@@ -545,7 +600,7 @@ footer a:hover {
     mix-blend-mode: normal;
   }
   header {
-    font-size: 1.75vw;
+    /* font-size: 1rem; */
   }
 
   .menuLinks {
@@ -655,16 +710,7 @@ footer a:hover {
   }
   /* Footer */
   footer {
-    margin: 0 10%;
-  }
-  .footerLinks {
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 15vh;
+    margin: 6rem 10% 0 10%;
   }
   #copyright {
     margin-bottom: 15vh;
@@ -690,7 +736,6 @@ footer a:hover {
   /* Header Nav Section */
 
   header {
-    font-size: 3vw;
     padding: 4vw 5%;
   }
 
