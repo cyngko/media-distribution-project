@@ -100,25 +100,31 @@ if (window.innerWidth > 1024) {
   };
 }
 
-// Lazy Load Images
-const targets = document.querySelectorAll('.imageContainer img');
+// // Lazy Load Images
+// const targets = document.querySelectorAll('.imageContainer img');
 
-const lazyLoad = (target) => {
-  const io = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        const src = img.getAttribute('data-lazy');
+// const lazyLoad = (target) => {
+//   const io = new IntersectionObserver((entries, observer) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         const img = entry.target;
+//         const src = img.getAttribute('data-lazy');
 
-        img.setAttribute('src', src);
-        img.classList.add('fade');
+//         img.setAttribute('src', src);
+//         img.classList.add('fade');
 
-        observer.disconnect();
-      }
-    });
-  });
+//         observer.disconnect();
+//       }
+//     });
+//   });
 
-  io.observe(target);
-};
+//   io.observe(target);
+// };
 
-targets.forEach(lazyLoad);
+// targets.forEach(lazyLoad);
+
+let nftImages = [...document.querySelectorAll('.nft-img')];
+
+nftImages.forEach((img, idx) => {
+  img.style.backgroundImage = `url(./images/ry/${idx + 1}_ry.png)`;
+});

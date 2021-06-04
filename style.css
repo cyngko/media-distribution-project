@@ -18,17 +18,6 @@ h2 {
   font-size: 3vw;
   position: relative;
 }
-h2::before {
-  content: '';
-  width: 100%;
-  position: absolute;
-  bottom: -50%;
-  height: 1px;
-  background-color: var(--white);
-  -webkit-transition: all 300ms;
-  -o-transition: all 300ms;
-  transition: all 300ms;
-}
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -41,6 +30,7 @@ h2::before {
 body {
   background-color: var(--dark);
   color: var(--white);
+  overscroll-behavior: none;
 }
 a {
   text-decoration: none;
@@ -232,7 +222,6 @@ main {
 #contact,
 #work {
   padding: 5% 3%;
-  scroll-snap-align: start;
 }
 
 /* About */
@@ -255,6 +244,10 @@ main {
   font-size: 3vw;
   line-height: 4vw;
 }
+#slogan p {
+  font-family: var(--hightlightFont) !important;
+  font-style: italic;
+}
 #slogan a {
   color: var(--highlightColor);
   -webkit-filter: hue-rotate(0deg);
@@ -262,6 +255,8 @@ main {
   -webkit-transition: 1000ms all ease;
   -o-transition: 1000ms all ease;
   transition: 1000ms all ease;
+  font-family: var(--hightlightFont) !important;
+  font-style: italic;
 }
 #slogan a:hover {
   text-shadow: 0 0 2px var(--highlightColor), 0 0 5px var(--highlightColor),
@@ -276,119 +271,105 @@ main {
 #work {
   padding: 0 3%;
 }
-.fa-arrow-right {
-  margin-right: 1rem;
-}
-.workCards {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.imageContainer {
+
+#work h1 {
   position: relative;
-  border-radius: 5px;
-  overflow: hidden;
-  width: calc(25% - 26.25px);
-  margin-right: 35px;
-  margin-bottom: 35px;
+  transform: rotate(-90deg);
 }
-.imageContainer:nth-child(4n + 0) {
-  margin-right: 0px;
-}
-.imageContainer img {
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 700ms ease;
-  -o-transition: all 700ms ease;
-  transition: all 700ms ease;
-}
-.imageContainer img:hover {
-  -webkit-transform: scale(1.02) !important;
-  -ms-transform: scale(1.02) !important;
-  transform: scale(1.02) !important;
-  -webkit-filter: hue-rotate(360deg);
-  filter: hue-rotate(360deg);
-}
-.imageDescription {
-  font-size: 1vw;
-  position: absolute;
-  color: var(--dark);
+#work h1::before {
+  content: '002.';
+  font-family: var(--hightlightFont);
   font-style: italic;
-  font-weight: 300;
-  width: 100%;
-  text-align: center;
-  padding: 0.75em 5%;
-  letter-spacing: 0.05rem;
-  background: rgba(255, 255, 255, 1);
-  bottom: 0;
-  -webkit-transform: translateY(105%);
-  -ms-transform: translateY(105%);
-  transform: translateY(105%);
-  -webkit-transition: 400ms -webkit-transform ease-in;
-  transition: 400ms -webkit-transform ease-in;
-  -o-transition: 400ms transform ease-in;
-  transition: 400ms transform ease-in;
-  transition: 400ms transform ease-in, 400ms -webkit-transform ease-in;
-}
-.imageContainer:hover .imageDescription {
-  -webkit-transform: translateY(0%);
-  -ms-transform: translateY(0%);
-  transform: translateY(0%);
-}
-
-.workContainer {
-  margin-bottom: 4em;
-}
-.workContainer h2 {
-  margin-bottom: 2em;
-}
-#nftCollectibles {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-top: 5rem;
-  padding-top: 0;
-}
-#nftCollectibles h2 {
-  position: relative;
-}
-#nftCollectibles h2::after {
-  content: 'Coming Soon';
   position: absolute;
-  color: var(--dark);
-  margin-left: 1.5em;
-
-  background: var(--white);
-  font-size: 1.5vw;
-  font-weight: 400;
-  padding: 12px 20px;
-  border-radius: 5px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  font-size: 2vw;
+  bottom: 100%;
 }
-
-.imageContainer img {
-  opacity: 0;
-  -webkit-transform: translatex(75%);
-  -ms-transform: translatex(75%);
-  transform: translatex(75%);
-  -webkit-transition: all 700ms;
-  -o-transition: all 700ms;
+.nftContainer {
+  position: relative;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nftContainer h2 {
+  font-family: var(--hightlightFont);
+  font-style: italic;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  pointer-events: none;
+  background: var(--dark);
+}
+.nftContainer h2::after {
+  content: 'NFT Collectibles';
+  font-family: var(--bodyFont);
+  position: absolute;
+  font-size: 1rem;
+  left: 0;
+  top: 100%;
+  background: var(--dark);
+}
+.nft-item {
+  width: calc(25% - 1rem);
+  height: calc((45% - 1rem) * (5 / 4));
+  /* border-radius: 5px; */
+}
+.nft-img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
   transition: all 700ms;
 }
-.fade {
+.nft-img:hover {
+  filter: hue-rotate(360deg);
+  transform: scale(1.05);
+}
+.nft-item:first-of-type {
+  transform: translateY(10%);
+}
+.nft-item:nth-of-type(3) {
+  transform: translateY(-15%);
+}
+.nft-item:nth-of-type(4) {
+  transform: translateY(5%);
+}
+.nft-item:nth-of-type(2) {
+  transform: translateY(0);
+}
+.nft-item:first-of-type::before,
+.nft-item:nth-of-type(4)::before {
+  content: '"Kelly"';
+  font-style: italic;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: -12%;
+  transform: translateX(-50%);
+}
+.nft-item:nth-of-type(4)::before {
+  content: '"Butterfly"';
+}
+
+.nft-item:nth-of-type(3)::before,
+.nft-item:nth-of-type(2)::before {
+  content: '"Aiyden"';
+  font-style: italic;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: -12%;
+  transform: translateX(-50%);
+}
+.nft-item:nth-of-type(2)::before {
+  content: '"Donna"';
+}
+
+/* .fade {
   -webkit-transform: translatex(-0%) !important;
   -ms-transform: translatex(-0%) !important;
   transform: translatex(-0%) !important;
@@ -396,11 +377,12 @@ main {
   -webkit-transition: all 700ms;
   -o-transition: all 700ms;
   transition: all 700ms;
-}
+} */
 
 /* Contact */
 #contact,
-#about {
+#about,
+.nftSection {
   height: 100vh;
   width: 94%;
   margin: 0 5%;
@@ -432,6 +414,8 @@ main {
   width: 50%;
 }
 .contactText {
+  font-family: var(--hightlightFont);
+  font-style: italic;
   position: relative;
   font-weight: 200;
   font-size: 2vw;
@@ -662,20 +646,23 @@ header nav a,
   }
   /* About Section */
   #about,
-  #contact {
-    padding: 0 10%;
+  #contact,
+  .nftSection {
+    padding: 0 5%;
     flex-direction: column;
     justify-content: space-evenly;
   }
   #about h1,
-  #contact h1 {
+  #contact h1,
+  #work h1 {
     transform: rotate(0deg);
     font-size: 7vw;
     text-align: left;
     width: 100%;
   }
   #about h1::before,
-  #contact h1::before {
+  #contact h1::before,
+  #work h1::before {
     font-size: 4vw;
   }
   #slogan {
@@ -684,22 +671,25 @@ header nav a,
     width: 100%;
   }
   /* Work Section */
-  #nftCollectibles {
-    height: auto;
+
+  .nft-item {
+    height: calc((45% - 1rem) * (5 / 4));
   }
-  #nftCollectibles h2::after {
+  .nftSection {
+    padding-top: 10%;
+  }
+  .nftContainer {
+    width: 100%;
+  }
+  .nftContainer h2 {
+    top: 10%;
+    left: 18%;
+  }
+  .nftContainer h2::before {
     display: none;
   }
-  .imageContainer {
-    width: calc(50% - 7px);
-    margin-right: 14px;
-    margin-bottom: 14px;
-  }
-  .imageDescription {
-    font-size: 3vw;
-  }
-  .imageContainer:nth-child(2n + 0) {
-    margin-right: 0px;
+  .nft-item:first-of-type::before {
+    top: 112%;
   }
 
   /* Contact */
@@ -725,6 +715,16 @@ header nav a,
 /* Mobile Size */
 @media only screen and (max-width: 768px) {
   /* General */
+
+  #contact,
+  #about,
+  .nftSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: calc(100vh - 8vh);
+  }
   h1,
   h2 {
     text-align: center;
@@ -749,20 +749,40 @@ header nav a,
   }
 
   /* Work */
-
-  #nftCollectibles h2 {
-    margin-top: 4em !important;
+  .nftSection {
+    height: 100%;
+  }
+  #work h1 {
+    margin-bottom: 30vw;
+  }
+  .nftContainer {
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  .nft-item {
+    width: calc(40vw - 1.5rem);
+    height: calc((40vw -1.5rem) * (5 / 4));
+    margin-bottom: 3rem;
+    overflow: hidden;
   }
 
+  .nftContainer h2 {
+    left: 23%;
+    top: -15vw;
+  }
+  .nft-item:first-of-type {
+    transform: translateY(0);
+  }
+  .nft-item:nth-of-type(3) {
+    transform: translateY(0);
+  }
+  .nft-item:nth-of-type(4) {
+    transform: translateY(0);
+  }
+  .nft-item:nth-of-type(2) {
+    transform: translateY(0);
+  }
   /* Contact Section */
-  #contact,
-  #about {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    height: calc(100vh - 8vh);
-  }
 
   .contactContent {
     width: 100%;
