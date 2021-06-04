@@ -72,7 +72,7 @@ class ImageItem {
   render() {
     if (this.isVisible && this.target != 0) {
       this.target = 0;
-      this.el.classList.add('.active');
+      this.el.classList.add('active');
     }
     this.current = lerp(this.current, this.target, this.ease).toFixed(2);
     this.el.querySelector('feDisplacementMap').scale.baseVal = this.current;
