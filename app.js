@@ -123,6 +123,7 @@ if (window.innerWidth > 1024) {
 
 // targets.forEach(lazyLoad);
 
+// Get NFT Background Images
 let nftImages = [...document.querySelectorAll('.nft-img')];
 
 nftImages.forEach((img, idx) => {
