@@ -458,7 +458,7 @@ main {
   top: 0;
   width: 540vw;
   height: 100%;
-  background-color: var(--white);
+  background-color: var(--dark);
   will-change: transform;
 }
 .slider-inner-one {
@@ -494,6 +494,38 @@ main {
 }
 .slider-main svg:hover {
   filter: hue-rotate(360deg);
+}
+.projectNavbar {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 2rem;
+  top: 0;
+  left: 0;
+}
+.projectNavbar a:hover {
+  color: var(--highlightColor) !important;
+}
+.projectNavbar .logo::after {
+  display: none;
+}
+.projectNavbar .logo a,
+.projectNavbar nav a {
+  color: var(--white);
+  font-size: clamp(0.75rem, 1vw, 1.5rem);
+}
+.projectNavbar nav a {
+  margin-right: 1rem;
+}
+.projectNavbar nav a:last-of-type {
+  margin-right: 0;
+}
+.projectNavbar nav {
+  padding-top: 1rem;
+  border-top: 1px solid var(--white);
 }
 
 /* Contact */

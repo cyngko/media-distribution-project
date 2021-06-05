@@ -81,47 +81,28 @@ document.querySelector('#copyright-year').innerText = new Date().getFullYear();
 
 // Custom Mouse Pointer
 
-if (window.innerWidth > 1024) {
-  let pointerJSScript = document.createElement('script');
-  pointerJSScript.src = 'https://seattleowl.com/pointer.js/pointer.js';
-  document.head.appendChild(pointerJSScript);
+function customPointer() {
+  if (window.innerWidth > 1024) {
+    let pointerJSScript = document.createElement('script');
+    pointerJSScript.src = 'https://seattleowl.com/pointer.js/pointer.js';
+    document.head.appendChild(pointerJSScript);
 
-  let pointerJSStyle = document.createElement('link');
-  pointerJSStyle.href = 'https://seattleowl.com/pointer.js/pointer.css';
-  pointerJSStyle.rel = 'stylesheet';
-  document.head.appendChild(pointerJSStyle);
+    let pointerJSStyle = document.createElement('link');
+    pointerJSStyle.href = 'https://seattleowl.com/pointer.js/pointer.css';
+    pointerJSStyle.rel = 'stylesheet';
+    document.head.appendChild(pointerJSStyle);
 
-  pointerJSScript.onload = () => {
-    init_pointer({
-      pointerColor: '#35ffa1', // Css color
-      ringSize: 10, // Pixels
-      ringClickSize: 10, // Pixels when clicking
-    });
-  };
+    pointerJSScript.onload = () => {
+      init_pointer({
+        pointerColor: '#35ffa1', // Css color
+        ringSize: 10, // Pixels
+        ringClickSize: 10, // Pixels when clicking
+      });
+    };
+  }
 }
 
-// // Lazy Load Images
-// const targets = document.querySelectorAll('.imageContainer img');
-
-// const lazyLoad = (target) => {
-//   const io = new IntersectionObserver((entries, observer) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         const img = entry.target;
-//         const src = img.getAttribute('data-lazy');
-
-//         img.setAttribute('src', src);
-//         img.classList.add('fade');
-
-//         observer.disconnect();
-//       }
-//     });
-//   });
-
-//   io.observe(target);
-// };
-
-// targets.forEach(lazyLoad);
+customPointer();
 
 // Get NFT Background Images
 let nftImages = [...document.querySelectorAll('.nft-img')];

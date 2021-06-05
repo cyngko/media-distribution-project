@@ -3,7 +3,7 @@
 let mainSlider = document.querySelector('.slider-main');
 let innerSliderOne = document.querySelector('.slider-inner-one');
 let innerSliderTwo = document.querySelector('.slider-inner-two');
-let images = [...document.querySelectorAll('svg')];
+let images = [...document.querySelectorAll('.slider-main svg ')];
 let imageItems = [];
 
 let current = 0;
