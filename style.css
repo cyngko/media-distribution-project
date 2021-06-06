@@ -61,7 +61,7 @@ header nav a,
   top: 0;
   left: 0;
   background-color: var(--dark);
-  z-index: 99;
+  z-index: 9999;
   text-align: center;
   pointer-events: none;
   opacity: 1;
@@ -817,8 +817,9 @@ header nav a,
     padding-top: 1em;
     mix-blend-mode: normal;
   }
-  .preloader {
-    height: calc(100vh - 8vh);
+  header nav a {
+    color: var(--white);
+    font-style: normal;
   }
 
   .menuLinks {
