@@ -305,7 +305,7 @@ main {
 }
 
 #work a:hover {
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 #work a::after {
   font-family: 'Font Awesome 5 Free';
@@ -320,6 +320,7 @@ main {
 }
 #work a:hover::after {
   content: '\f35a';
+  font-size: clamp(2rem, 4vw, 5rem);
   font-weight: 500;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -710,6 +711,10 @@ footer h4 {
 }
 .footerLinkContainer h4 {
   margin-bottom: 2em;
+  color: var(--white);
+}
+.footerLinkContainer li {
+  color: var(--white);
 }
 .footerLinkContainer:last-child {
   margin-right: 0;
@@ -717,7 +722,10 @@ footer h4 {
 .footerBottom {
   display: flex;
   justify-content: space-between;
-  font-size: clamp(0.75rem, 1vw, 1vw);
+}
+.footerBottom a,
+#copyright span {
+  font-size: clamp(0.75rem, 0.75vw, 1rem);
 }
 
 /* Used to make sure font awesome icons render reliably */
