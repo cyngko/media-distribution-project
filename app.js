@@ -96,7 +96,7 @@ function customPointer() {
       init_pointer({
         pointerColor: '#35ffa1', // Css color
         ringSize: 10, // Pixels
-        ringClickSize: 10, // Pixels when clicking
+        ringClickSize: 5, // Pixels when clicking
       });
     };
   }
