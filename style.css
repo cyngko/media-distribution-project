@@ -10,6 +10,8 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
   --hightlightFont: 'Libre Caslon Display', serif;
+  --tw: 76vw;
+  --tw2: 95vw;
 }
 h1 {
   font-size: 4vw;
@@ -24,8 +26,8 @@ h2 {
   margin: 0;
   padding: 0;
   font-family: var(--bodyFont);
-  scroll-behavior: smooth;
   text-transform: uppercase;
+  scroll-behavior: smooth;
 }
 body {
   background-color: var(--dark);
@@ -285,14 +287,16 @@ main {
 }
 #work a {
   color: var(--white);
+  color: var(--dark);
   font-size: clamp(1rem, 2vw, 2rem);
   position: relative;
   text-decoration: underline;
   left: 50%;
+  transition: 500ms all ease-in-out;
 }
 
 #work a:hover {
-  color: var(--highlightColor);
+  letter-spacing: 1px;
 }
 #work a::after {
   font-family: 'Font Awesome 5 Free';
@@ -303,9 +307,11 @@ main {
   top: 50%;
   transform: translateY(-50%);
   font-size: clamp(1.5rem, 3vw, 4rem);
-  margin-left: 4rem;
+  margin-left: 3rem;
 }
 #work a:hover::after {
+  content: '\f35a';
+  font-weight: 500;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: bounce-right;
@@ -320,13 +326,13 @@ main {
     transform: translate(0, -50%);
   }
   30% {
-    transform: translate(150px, -50%);
+    transform: translate(30px, -50%);
   }
   50% {
     transform: translate(0, -50%);
   }
   57% {
-    transform: translate(5px, -50%);
+    transform: translate(1px, -50%);
   }
   64% {
     transform: translate(0, -50%);
@@ -336,12 +342,37 @@ main {
   }
 }
 .projectsLinkContainer {
-  border-top: 1px solid var(--white);
-  border-bottom: 1px solid var(--white);
   background: var(--white);
-  background: #090909;
+  background: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%);
+  background-size: 200% 200%;
+  -webkit-animation: gradientBG 3s ease infinite;
+  animation: gradientBG 3s ease infinite;
   padding: 5rem;
 }
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 #work h1::before {
   content: '002.';
   font-family: var(--hightlightFont);
@@ -433,6 +464,45 @@ main {
 }
 .nft-item:nth-of-type(2)::before {
   content: '"Donna"';
+}
+#work h3 {
+  width: 50%;
+  margin: 4rem 0;
+  text-align: right;
+  padding: 2rem 0;
+  border-bottom: 1px solid white;
+}
+/* Marquee */
+.marquee {
+  margin: 2rem 0;
+  font-size: 4vw;
+  overflow: hidden;
+}
+.marquee span {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: var(--hightlightFont);
+  font-style: italic;
+  width: var(--tw);
+  text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor,
+    calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
+  will-change: transform;
+  animation: marquee 20s linear infinite;
+  animation-play-state: running;
+}
+#m2 {
+  width: var(--tw2);
+  text-shadow: var(--tw2) 0 currentColor, calc(var(--tw2) * 2) 0 currentColor,
+    calc(var(--tw2) * 3) 0 currentColor, calc(var(--tw2) * 4) 0 currentColor;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Projects */
@@ -724,6 +794,9 @@ header nav a,
 @media screen and(prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto;
+  }
+  .marquee span {
+    animation-play-state: paused;
   }
 }
 /* Large Desktop Screens */
