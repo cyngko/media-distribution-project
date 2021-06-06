@@ -992,9 +992,9 @@ header nav a,
     flex-wrap: wrap;
   }
   .nft-item {
-    width: calc(40vw - 1.5rem);
-    height: calc((40vw -1.5rem) * (5 / 4));
-    margin-bottom: 3rem;
+    width: calc(43vw - 1.5rem);
+    height: calc((43vw -1.5rem) * (5 / 4));
+    margin-bottom: 2.5rem;
     overflow: hidden;
   }
 
