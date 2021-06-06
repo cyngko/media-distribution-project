@@ -62,6 +62,8 @@ var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollpos = window.pageYOffset;
   let navigation = document.getElementById('navigation');
+  let navLinks = document.querySelectorAll('nav a');
+  let socialIcons = document.querySelectorAll('.socials a');
   if (prevScrollpos > currentScrollpos) {
     navigation.style.top = '0';
   } else {
@@ -70,9 +72,25 @@ window.onscroll = function () {
   prevScrollpos = currentScrollpos;
   if (prevScrollpos > innerHeight) {
     navigation.style.backgroundColor = 'rgba(11, 11, 11, 0.9)';
+    document.querySelector('.logo a').style.color = 'white';
+
+    navLinks.forEach((link) => {
+      link.style.color = 'white';
+    });
+    socialIcons.forEach((icon) => {
+      icon.style.color = 'white';
+    });
     navigation.style.mixBlendMode = 'initial';
   } else {
     navigation.style.backgroundColor = '';
+    document.querySelector('.logo a').style.color = 'var(--dark)';
+
+    navLinks.forEach((link) => {
+      link.style.color = 'var(--dark)';
+    });
+    socialIcons.forEach((icon) => {
+      icon.style.color = 'var(--dark)';
+    });
   }
 };
 
