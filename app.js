@@ -72,37 +72,41 @@ window.onscroll = function () {
   prevScrollpos = currentScrollpos;
   if (prevScrollpos > innerHeight) {
     navigation.style.backgroundColor = 'rgba(11, 11, 11, 0.9)';
-    document.querySelector('.logo a').style.color = 'white';
+    if (window.innerWidth > 2024) {
+      document.querySelector('.logo a').style.color = 'white';
 
-    navLinks.forEach((link) => {
-      link.style.color = 'white';
-    });
-    socialIcons.forEach((icon) => {
-      icon.style.color = 'white';
-    });
+      navLinks.forEach((link) => {
+        link.style.color = 'white';
+      });
+      socialIcons.forEach((icon) => {
+        icon.style.color = 'white';
+      });
+    }
     navigation.style.mixBlendMode = 'initial';
   } else {
     navigation.style.backgroundColor = '';
     document.querySelector('.logo a').style.color = 'var(--dark)';
 
-    navLinks.forEach((link) => {
-      link.style.color = 'var(--dark)';
-      link.addEventListener('mouseover', () => {
-        link.style.color = 'var(--highlightColor)';
+    if (window.innerWidth > 1024) {
+      navLinks.forEach((link) => {
+        link.style.color = 'var(--dark)';
+        link.addEventListener('mouseover', () => {
+          link.style.color = 'var(--highlightColor)';
+        });
+        link.addEventListener('mouseleave', () => {
+          link.style.color = 'var(--white)';
+        });
       });
-      link.addEventListener('mouseleave', () => {
-        link.style.color = 'var(--white)';
+      socialIcons.forEach((icon) => {
+        icon.style.color = 'var(--dark)';
+        icon.addEventListener('mouseover', () => {
+          icon.style.color = 'var(--highlightColor)';
+        });
+        icon.addEventListener('mouseleave', () => {
+          icon.style.color = 'var(--white)';
+        });
       });
-    });
-    socialIcons.forEach((icon) => {
-      icon.style.color = 'var(--dark)';
-      icon.addEventListener('mouseover', () => {
-        icon.style.color = 'var(--highlightColor)';
-      });
-      icon.addEventListener('mouseleave', () => {
-        icon.style.color = 'var(--white)';
-      });
-    });
+    }
   }
 };
 
