@@ -1070,5 +1070,10 @@ header nav a,
   }
   #copyright {
     font-size: 2vw;
+    margin-top: 2rem;
+  }
+  .footerBottom {
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }
