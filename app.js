@@ -87,9 +87,21 @@ window.onscroll = function () {
 
     navLinks.forEach((link) => {
       link.style.color = 'var(--dark)';
+      link.addEventListener('mouseover', () => {
+        link.style.color = 'var(--highlightColor)';
+      });
+      link.addEventListener('mouseleave', () => {
+        link.style.color = 'var(--white)';
+      });
     });
     socialIcons.forEach((icon) => {
       icon.style.color = 'var(--dark)';
+      icon.addEventListener('mouseover', () => {
+        icon.style.color = 'var(--highlightColor)';
+      });
+      icon.addEventListener('mouseleave', () => {
+        icon.style.color = 'var(--white)';
+      });
     });
   }
 };
