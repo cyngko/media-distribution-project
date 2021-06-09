@@ -89,7 +89,7 @@ header {
   padding: 1vw 3%;
   top: 0px;
   left: 0px;
-  z-index: 10;
+  z-index: 9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,8 +489,8 @@ main {
 .nft-item:first-of-type::after,
 .nft-item:nth-of-type(4)::after {
   content: '';
-  height: 5px;
-  bottom: -20px;
+  height: 1px;
+  bottom: -15px;
   width: 100%;
   background-color: var(--white);
   position: absolute;
@@ -498,8 +498,8 @@ main {
 .nft-item:nth-of-type(2)::after,
 .nft-item:nth-of-type(3)::after {
   content: '';
-  height: 5px;
-  top: -20px;
+  height: 1px;
+  top: -15px;
   width: 100%;
   background-color: var(--white);
   position: absolute;
