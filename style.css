@@ -61,6 +61,7 @@ header nav a,
   z-index: 9999;
   text-align: center;
   pointer-events: none;
+  user-select: none;
   opacity: 1;
   -webkit-transition: 700ms all ease;
   -o-transition: 700ms all ease;
