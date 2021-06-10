@@ -476,7 +476,7 @@ main {
   transform: translateX(-50%);
 }
 .nft-item:nth-of-type(4)::before {
-  content: '"Butterfly"';
+  content: '"B-Fly"';
 }
 
 .nft-item:nth-of-type(3)::before,
@@ -497,7 +497,7 @@ main {
   content: '';
   height: 1px;
   bottom: -15px;
-  width: 100%;
+  width: 30%;
   background-color: var(--white);
   position: absolute;
 }
@@ -506,7 +506,7 @@ main {
   content: '';
   height: 1px;
   top: -15px;
-  width: 100%;
+  width: 30%;
   background-color: var(--white);
   position: absolute;
 }
