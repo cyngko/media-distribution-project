@@ -57,7 +57,12 @@ header nav a,
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
+  background-image: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+  background-size: 200% 200%;
+  -webkit-animation: gradientBG 3s ease infinite;
+  animation: gradientBG 3s ease infinite;
+  filter: saturate(200%);
   z-index: 9999;
   text-align: center;
   pointer-events: none;
@@ -68,6 +73,7 @@ header nav a,
   transition: 700ms all ease;
 }
 .preloader img {
+  filter: grayscale(100%) brightness(0%);
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
