@@ -372,20 +372,7 @@ main {
   white-space: nowrap;
   will-change: background-image;
 }
-.projectsLinkContainer:hover {
-  background-image: linear-gradient(
-    -45deg,
-    #eea2a2 0%,
-    #bbc1bf 19%,
-    #57c6e1 42%,
-    #b49fda 79%,
-    #7ac5d8 100%
-  );
-  filter: saturate(250%);
-  background-size: 300% 300%;
-  -webkit-animation: gradientBG 2s ease infinite;
-  animation: gradientBG 3s ease infinite;
-}
+
 
 @-webkit-keyframes gradientBG {
   0% {
