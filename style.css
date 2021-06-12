@@ -75,6 +75,7 @@ header nav a,
 }
 .preloader img {
   filter: grayscale(100%) brightness(0%);
+
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -223,9 +224,7 @@ main {
   transform: translate(-50%, -50%);
   width: 60%;
   z-index: 99;
-  filter: saturate(200%) hue-rotate(2500deg) brightness(0);
-  /* -webkit-animation: colorRotation 1s infinite;
-  animation: colorRotation 1s infinite; */
+  filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
 }
 
 .heroSection video {
