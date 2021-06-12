@@ -51,22 +51,20 @@ function enableScroll() {
 
 disableScroll();
 
-// setTimeout(
-//   (window.onload = function () {
-//     document.querySelector('.preloader').style.opacity = '0';
-//     enableScroll();
-//   }),
-//   2000
-// );
 
-let stateCheck = setInterval(() => {
-  if (document.readyState === 'complete') {
+ window.onload = function () {
     document.querySelector('.preloader').style.opacity = '0';
     enableScroll();
-    clearInterval(stateCheck);
-    // document ready
   }
-}, 100);
+
+// let stateCheck = setInterval(() => {
+//   if (document.readyState === 'complete') {
+//     document.querySelector('.preloader').style.opacity = '0';
+//     enableScroll();
+//     clearInterval(stateCheck);
+//     // document ready
+//   }
+// }, 100);
 
 
 

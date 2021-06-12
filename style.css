@@ -109,11 +109,10 @@ header {
   align-items: center;
   -webkit-transition: top 300ms ease-in-out;
   -o-transition: top 300ms ease-in-out;
-  transition: top 300ms ease-in-out;
+  transition: all 400ms ease-in-out;
   z-index: 100;
   font-size: 1.25vw;
   background: rgba(256, 256, 256, 0);
-  transition: 300ms background;
 }
 
 header:hover {
@@ -601,7 +600,7 @@ main {
   padding: 20px;
   opacity: 0;
   will-change: transform;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.7s ease-in-out;
 }
 
 .slider-main svg.active {
