@@ -5,7 +5,8 @@
   /* --dark: rgb(21, 21, 21); */
   --dark: rgb(11, 11, 11);
   --white: #f0f0f0;
-  --highlightColor: #35ffa1;
+  /* --highlightColor: #35ffa1; */
+  --highlightColor: #ff5634;
   --bodyFont: 'Almarai', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
@@ -58,7 +59,7 @@ header nav a,
   top: 0;
   left: 0;
   /* background-color: var(--dark); */
-  background-image: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+  background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
@@ -110,12 +111,16 @@ header {
   transition: top 300ms ease-in-out;
   z-index: 100;
   font-size: 1.25vw;
-  background: rgba(256, 256, 256, 0.1);
+  background: rgba(256, 256, 256, 0);
+  transition: 300ms background;
+}
+
+header:hover {
+  background: rgba(0, 0, 0, 0.2);
 }
 header a {
   color: var(--white);
 }
-
 header nav span {
   font-family: var(--hightlightFont);
   font-size: clamp(0.75rem, 0.5vw, 1rem);
@@ -218,7 +223,7 @@ main {
   transform: translate(-50%, -50%);
   width: 60%;
   z-index: 99;
-  filter: saturate(200%) hue-rotate(2500deg);
+  filter: saturate(200%) hue-rotate(2500deg) brightness(0);
   /* -webkit-animation: colorRotation 1s infinite;
   animation: colorRotation 1s infinite; */
 }
@@ -354,15 +359,17 @@ main {
   }
 }
 .projectsLinkContainer {
-  background-image: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%);
+  /* background-image: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%); */
+  background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
+  filter: saturate(200%);
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
-  padding: 5rem;
+  padding: 8rem;
   transition: 300ms all ease-in-out;
   will-change: background-image;
 }
-.projectsLinkContainer:hover {
+/* .projectsLinkContainer:hover {
   background-image: linear-gradient(
     -45deg,
     #eea2a2 0%,
@@ -375,7 +382,7 @@ main {
   background-size: 300% 300%;
   -webkit-animation: gradientBG 2s ease infinite;
   animation: gradientBG 3s ease infinite;
-}
+} */
 
 @-webkit-keyframes gradientBG {
   0% {
@@ -451,7 +458,7 @@ main {
 }
 .nft-img:hover {
   filter: hue-rotate(360deg);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 .nft-item:first-of-type {
   transform: translateY(10%);
@@ -512,6 +519,7 @@ main {
 }
 #work h3 {
   width: 50%;
+  font-size: clamp(1.25rem, 3vw, 2rem);
   margin: 4rem 0;
   text-align: right;
   padding: 2rem 0;
@@ -915,9 +923,7 @@ header nav a,
     width: 85%;
   }
   /* Hero Section */
-  .heroSection {
-    height: calc(100vh - 8vh);
-  }
+
   .heroSection img {
     width: 85%;
   }
