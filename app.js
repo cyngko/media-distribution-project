@@ -51,33 +51,24 @@ function enableScroll() {
 
 disableScroll();
 
-setTimeout(
-  (window.onload = function () {
+// setTimeout(
+//   (window.onload = function () {
+//     document.querySelector('.preloader').style.opacity = '0';
+//     enableScroll();
+//   }),
+//   2000
+// );
+
+let stateCheck = setInterval(() => {
+  if (document.readyState === 'complete') {
     document.querySelector('.preloader').style.opacity = '0';
     enableScroll();
-  }),
-  2000
-);
+    clearInterval(stateCheck);
+    // document ready
+  }
+}, 100);
 
-// let stateCheck = setInterval(() => {
-//   if (document.readyState === 'complete') {
-//     document.querySelector('.preloader').style.opacity = '0';
-//     enableScroll();
-//     clearInterval(stateCheck);
-//     // document ready
-//   }
-// }, 100);
 
-// let stateCheck = setInterval(isLoaded, 100)
-
-// function isLoaded() {
-//   if (document.readyState === 'complete') {
-//     document.querySelector('.preloader').style.opacity = '0';
-//     enableScroll();
-//     clearInterval(stateCheck);
-// }
-
-// setTimeout(stateCheck, 2000);
 
 // Hide header while scrolling
 var prevScrollpos = window.pageYOffset;
