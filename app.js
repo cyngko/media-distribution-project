@@ -57,14 +57,20 @@ disableScroll();
     enableScroll();
   }
 
-// let stateCheck = setInterval(() => {
-//   if (document.readyState === 'complete') {
-//     document.querySelector('.preloader').style.opacity = '0';
-//     enableScroll();
-//     clearInterval(stateCheck);
-//     // document ready
-//   }
-// }, 100);
+
+// Use code below if preloader should only be displayed once
+
+  // if(! sessionStorage.getItem('doNotShow')) {
+  //   sessionStorage.setItem('doNotShow', true);
+  //   window.onload = function () {
+  //     document.querySelector('.preloader').style.opacity = '0';
+  //     enableScroll();
+  //   }
+  // } else {
+  //   document.querySelector('.preloader').style.display = 'none';
+  //   enableScroll();
+  // }
+
 
 
 

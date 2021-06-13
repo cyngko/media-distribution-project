@@ -6,7 +6,7 @@
   --dark: rgb(11, 11, 11);
   --white: #f0f0f0;
   /* --highlightColor: #35ffa1; */
-  --highlightColor: #ff7b00;
+  --highlightColor: lime;
   --bodyFont: 'Almarai', 'Helvetica Neue', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
@@ -59,7 +59,8 @@ header nav a,
   top: 0;
   left: 0;
   /* background-color: var(--dark); */
-  background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
+  /* background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%); */
+  /* background-image: linear-gradient(4deg, #0fd850 0%, #f9f047 100%); */
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
@@ -74,7 +75,7 @@ header nav a,
   transition: 700ms all ease;
 }
 .preloader img {
-  filter: grayscale(100%) brightness(0%);
+  filter: grayscale(100%) brightness(200%);
 
   position: relative;
   top: 50%;
@@ -360,13 +361,14 @@ main {
 .projectsLinkContainer {
   /* background-image: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%); */
   background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
+  background-image: linear-gradient(4deg, #0fd850 0%, #f9f047 100%);
   filter: saturate(200%);
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
   padding: 8rem;
-  transition: 300ms all ease-in-out;
-  overflow: hidden;
+  transition: 700ms all ease-in-out;
+  /* overflow: hidden; */
   white-space: nowrap;
   will-change: background-image;
 }
@@ -699,10 +701,13 @@ main {
 
 .contactCTA {
   color: var(--white);
+ 
+  
 }
-.contactCTA:hover {
-  color: var(--highlightColor);
+.contactCTAContent:hover > svg {
+  filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
 }
+
 .contactCTAContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -714,10 +719,18 @@ main {
 }
 .contactCTAContent svg {
   margin-right: 2rem;
+  transition: all 400ms ease-in-out;
 }
+
 .contactCTAContent span {
   font-weight: bold;
+  transition: all 400ms ease-in-out;
   font-size: 2vw;
+}
+.contactCTA span:hover {
+  color: var(--highlightColor);
+  text-shadow: 0 0 2px var(--highlightColor), 0 0 5px var(--highlightColor),
+  0 0 20px var(--highlightColor);
 }
 
 /* Footer */
@@ -1056,6 +1069,14 @@ header nav a,
   #work a {
     left: 0;
   }
+  .projectsLinkContainer{
+    padding: 4rem;
+  }
+  #work h3{
+    margin-top: 0rem;
+    padding: 1rem;
+  }
+
   /* Contact Section */
 
   .contactContent {
