@@ -324,11 +324,9 @@ main {
   transform: translateY(-50%);
   font-size: clamp(1.5rem, 3vw, 4rem);
   margin-left: 3rem;
+  border-radius: 50%;
 }
 #work a:hover::after {
-  content: '\f35a';
-  font-size: clamp(2rem, 4vw, 5rem);
-  font-weight: 500;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-name: bounce-right;
@@ -443,12 +441,16 @@ main {
   position: relative;
   background-position: center;
   background-size: cover;
-  transition: all 700ms;
+  transition: all 600ms ease-in-out;
   border-radius: 3px;
 }
 .nft-img:hover {
   filter: hue-rotate(360deg);
   transform: scale(1.02);
+  transform: skew(0deg, 2deg);
+}
+.nft-item:hover::before, .nft-item:hover::after {
+  transform: skew(0deg, 2deg) !important;
 }
 .nft-item:first-of-type {
   transform: translateY(10%);
@@ -471,6 +473,7 @@ main {
   left: 50%;
   top: -12%;
   transform: translateX(-50%);
+  transition: all 300ms ease-in-out;
 }
 .nft-item:nth-of-type(4)::before {
   content: '"B-Fly"';
@@ -485,6 +488,7 @@ main {
   left: 50%;
   bottom: -12%;
   transform: translateX(-50%);
+  transition: all 300ms ease-in-out;
 }
 .nft-item:nth-of-type(2)::before {
   content: '"Donna"';
@@ -497,6 +501,7 @@ main {
   width: 30%;
   background-color: var(--white);
   position: absolute;
+  transition: all 700ms ease-in-out;
 }
 .nft-item:nth-of-type(2)::after,
 .nft-item:nth-of-type(3)::after {
@@ -506,6 +511,7 @@ main {
   width: 30%;
   background-color: var(--white);
   position: absolute;
+  transition: all 700ms ease-in-out;
 }
 #work h3 {
   width: 50%;
