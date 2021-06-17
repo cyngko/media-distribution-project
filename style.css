@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
@@ -37,7 +44,8 @@ h2 {
 body {
   background-color: var(--dark);
   color: var(--white);
-  overscroll-behavior: none;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 a {
   text-decoration: none;
@@ -49,10 +57,10 @@ a {
 }
 header nav a,
 .logo a,
-#copyright,
-.socials a,
-.footerLinkContainer {
-  font-size: 1.125;
+#copyright
+.footerLinkContainer,
+.socials i {
+  font-size: 1.125rem;
   color: var(--dark);
 }
 /* Preloader */
@@ -66,18 +74,23 @@ header nav a,
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
-  filter: saturate(200%);
+  -webkit-filter: saturate(200%);
+          filter: saturate(200%);
   z-index: 9999;
   text-align: center;
   pointer-events: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   opacity: 1;
   -webkit-transition: 700ms all ease;
   -o-transition: 700ms all ease;
   transition: 700ms all ease;
 }
 .preloader img {
-  filter: grayscale(100%) brightness(200%);
+  -webkit-filter: grayscale(100%) brightness(200%);
+          filter: grayscale(100%) brightness(200%);
 
   position: relative;
   top: 50%;
@@ -112,6 +125,8 @@ header {
   align-items: center;
   -webkit-transition: top 300ms ease-in-out;
   -o-transition: top 300ms ease-in-out;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
   z-index: 100;
   font-size: 1.25vw;
@@ -177,10 +192,10 @@ header nav a:hover {
   -ms-flex-align: center;
   align-items: center;
 }
-.socials a:hover {
+.socials i:hover {
   color: var(--highlightColor);
 }
-.socials a:first-child {
+.socials i:first-child {
   margin-right: 1em;
 }
 
@@ -229,7 +244,8 @@ main {
   transform: translate(-50%, -50%);
   width: 60%;
   z-index: 99;
-  filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
+  -webkit-filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
+          filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
 }
 
 .heroSection video {
@@ -255,7 +271,9 @@ main {
 
 #about h1 {
   position: relative;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 #about h1::before {
   content: '001.';
@@ -304,7 +322,9 @@ main {
 
 #work h1 {
   position: relative;
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 #work a {
   color: var(--white);
@@ -313,6 +333,8 @@ main {
   position: relative;
   text-decoration: underline;
   left: 50%;
+  -webkit-transition: 500ms all ease-in-out;
+  -o-transition: 500ms all ease-in-out;
   transition: 500ms all ease-in-out;
 }
 
@@ -323,53 +345,103 @@ main {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '\f061';
-  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+          transform-origin: bottom;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   font-size: clamp(1.5rem, 3vw, 4rem);
   margin-left: 3rem;
   border-radius: 50%;
 }
 #work a:hover::after {
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: bounce-right;
-  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: bounce-right;
+          animation-name: bounce-right;
+  -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 /* Bounce Right Animation */
-@keyframes bounce-right {
+@-webkit-keyframes bounce-right {
   0% {
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   10% {
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   30% {
-    transform: translate(30px, -50%);
+    -webkit-transform: translate(30px, -50%);
+            transform: translate(30px, -50%);
   }
   50% {
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   57% {
-    transform: translate(1px, -50%);
+    -webkit-transform: translate(1px, -50%);
+            transform: translate(1px, -50%);
   }
   64% {
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
   100% {
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+}
+@keyframes bounce-right {
+  0% {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  10% {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  30% {
+    -webkit-transform: translate(30px, -50%);
+            transform: translate(30px, -50%);
+  }
+  50% {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  57% {
+    -webkit-transform: translate(1px, -50%);
+            transform: translate(1px, -50%);
+  }
+  64% {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  100% {
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
 }
 .projectsLinkContainer {
   /* background-image: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%); */
+  background-image: -o-linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
   background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
+  background-image: -o-linear-gradient(86deg, #0fd850 0%, #f9f047 100%);
   background-image: linear-gradient(4deg, #0fd850 0%, #f9f047 100%);
-  filter: saturate(200%);
+  -webkit-filter: saturate(200%);
+          filter: saturate(200%);
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
   padding: 8rem;
+  -webkit-transition: 700ms all ease-in-out;
+  -o-transition: 700ms all ease-in-out;
   transition: 700ms all ease-in-out;
   /* overflow: hidden; */
   white-space: nowrap;
@@ -412,9 +484,15 @@ main {
   position: relative;
   width: 80%;
   height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .nftContainer h2 {
   font-family: var(--hightlightFont);
@@ -423,7 +501,9 @@ main {
   z-index: 2;
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
   pointer-events: none;
   background: var(--dark);
 }
@@ -446,28 +526,42 @@ main {
   position: relative;
   background-position: center;
   background-size: cover;
+  -webkit-transition: all 600ms ease-in-out;
+  -o-transition: all 600ms ease-in-out;
   transition: all 600ms ease-in-out;
   border-radius: 3px;
 }
 .nft-img:hover {
-  filter: hue-rotate(360deg);
-  transform: scale(1.02);
-  transform: rotate3d(1, 1, 1, 10deg);
+  -webkit-filter: hue-rotate(360deg);
+          filter: hue-rotate(360deg);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transform: rotate3d(1, 1, 1, 10deg);
+          transform: rotate3d(1, 1, 1, 10deg);
 }
 /* .nft-item:hover::before, .nft-item:hover::after {
   transform: rotate3d(1, 1, 1, 15deg) !important;
 } */
 .nft-item:first-of-type {
-  transform: translateY(10%);
+  -webkit-transform: translateY(10%);
+      -ms-transform: translateY(10%);
+          transform: translateY(10%);
 }
 .nft-item:nth-of-type(3) {
-  transform: translateY(-15%);
+  -webkit-transform: translateY(-15%);
+      -ms-transform: translateY(-15%);
+          transform: translateY(-15%);
 }
 .nft-item:nth-of-type(4) {
-  transform: translateY(5%);
+  -webkit-transform: translateY(5%);
+      -ms-transform: translateY(5%);
+          transform: translateY(5%);
 }
 .nft-item:nth-of-type(2) {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 .nft-item:first-of-type::before,
 .nft-item:nth-of-type(4)::before {
@@ -477,7 +571,11 @@ main {
   position: absolute;
   left: 50%;
   top: -12%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
 .nft-item:nth-of-type(4)::before {
@@ -492,7 +590,11 @@ main {
   position: absolute;
   left: 50%;
   bottom: -12%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
 }
 .nft-item:nth-of-type(2)::before {
@@ -506,6 +608,8 @@ main {
   width: 30%;
   background-color: var(--white);
   position: absolute;
+  -webkit-transition: all 700ms ease-in-out;
+  -o-transition: all 700ms ease-in-out;
   transition: all 700ms ease-in-out;
 }
 .nft-item:nth-of-type(2)::after,
@@ -516,6 +620,8 @@ main {
   width: 30%;
   background-color: var(--white);
   position: absolute;
+  -webkit-transition: all 700ms ease-in-out;
+  -o-transition: all 700ms ease-in-out;
   transition: all 700ms ease-in-out;
 }
 #work h3 {
@@ -541,8 +647,10 @@ main {
   text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor,
     calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
   will-change: transform;
-  animation: marquee 20s linear infinite;
-  animation-play-state: running;
+  -webkit-animation: marquee 20s linear infinite;
+          animation: marquee 20s linear infinite;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 #m2 {
   width: var(--tw2);
@@ -550,12 +658,25 @@ main {
     calc(var(--tw2) * 3) 0 currentColor, calc(var(--tw2) * 4) 0 currentColor;
 }
 
-@keyframes marquee {
+@-webkit-keyframes marquee {
   0% {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
@@ -567,7 +688,9 @@ main {
   z-index: 2;
   color: var(--white);
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-size: clamp(2rem, 4vw, 3rem);
   white-space: nowrap;
 }
@@ -593,8 +716,11 @@ main {
   left: 0;
   width: 100%;
   height: 65vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   will-change: transform;
 }
 .slider-inner-two {
@@ -603,8 +729,11 @@ main {
   left: 40vw;
   width: 120%;
   height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   will-change: transform;
 }
 .slider-main svg {
@@ -613,6 +742,8 @@ main {
   padding: 20px;
   opacity: 0;
   will-change: transform;
+  -webkit-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 
@@ -620,14 +751,22 @@ main {
   opacity: 1;
 }
 .slider-main svg:hover {
-  filter: hue-rotate(360deg);
+  -webkit-filter: hue-rotate(360deg);
+          filter: hue-rotate(360deg);
 }
 .projectNavbar {
   position: fixed;
   z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100vh;
   padding: 2rem;
   top: 0;
@@ -716,7 +855,8 @@ main {
   
 }
 .contactCTAContent:hover > svg {
-  filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
+  -webkit-filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
+          filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
 }
 
 .contactCTAContent {
@@ -730,11 +870,15 @@ main {
 }
 .contactCTAContent svg {
   margin-right: 2rem;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
 }
 
 .contactCTAContent span {
   font-weight: bold;
+  -webkit-transition: all 400ms ease-in-out;
+  -o-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
   font-size: 2vw;
 }
@@ -761,8 +905,11 @@ footer h4 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .footerLinkContainer {
   margin-bottom: 4rem;
@@ -778,8 +925,12 @@ footer h4 {
   margin-right: 0;
 }
 .footerBottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .footerBottom a,
 #copyright span {
@@ -800,38 +951,81 @@ footer h4 {
   font-weight: 900;
   content: '\f062';
   margin-left: 0.75rem;
-  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+      -ms-transform-origin: bottom;
+          transform-origin: bottom;
   position: absolute;
 }
 .footerBottom a:hover::after {
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-name: bounce;
-  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
 /* Bounce Animation of Back to Top Arrow */
-@keyframes bounce {
+@-webkit-keyframes bounce {
   0% {
-    transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
   }
   10% {
-    transform: scale(1.1, 0.9) translateY(0);
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
-    transform: scale(0.9, 1.1) translateY(-20px);
+    -webkit-transform: scale(0.9, 1.1) translateY(-20px);
+            transform: scale(0.9, 1.1) translateY(-20px);
   }
   50% {
-    transform: scale(1.05, 0.95) translateY(0);
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+            transform: scale(1.05, 0.95) translateY(0);
   }
   57% {
-    transform: scale(1, 1) translateY(-1px);
+    -webkit-transform: scale(1, 1) translateY(-1px);
+            transform: scale(1, 1) translateY(-1px);
   }
   64% {
-    transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
   }
   100% {
-    transform: scale(1, 1) translateY(0);
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+            transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(-20px);
+            transform: scale(0.9, 1.1) translateY(-20px);
+  }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+            transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1, 1) translateY(-1px);
+            transform: scale(1, 1) translateY(-1px);
+  }
+  64% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    -webkit-transform: scale(1, 1) translateY(0);
+            transform: scale(1, 1) translateY(0);
   }
 }
 
@@ -870,7 +1064,8 @@ header nav a,
     scroll-behavior: auto;
   }
   .marquee span {
-    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
   }
 }
 /* Large Desktop Screens */
@@ -944,13 +1139,20 @@ header nav a,
   #contact,
   .nftSection {
     padding: 0 5%;
-    flex-direction: column;
-    justify-content: space-evenly;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   #about h1,
   #contact h1,
   #work h1 {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
     font-size: 7vw;
     text-align: left;
     width: 100%;
@@ -1052,7 +1254,8 @@ header nav a,
   }
   .nftContainer {
     height: 100%;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .nft-item {
     width: calc(43vw - 1.5rem);
@@ -1066,16 +1269,24 @@ header nav a,
     top: -15vw;
   }
   .nft-item:first-of-type {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
   }
   .nft-item:nth-of-type(3) {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
   }
   .nft-item:nth-of-type(4) {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
   }
   .nft-item:nth-of-type(2) {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
   }
   #work a {
     left: 0;
@@ -1142,7 +1353,12 @@ header nav a,
     margin-top: 2rem;
   }
   .footerBottom {
-    flex-direction: column-reverse;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
