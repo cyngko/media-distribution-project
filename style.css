@@ -203,7 +203,6 @@ main {
   width: 100%;
   overflow: hidden;
   position: relative;
-  /* scroll-snap-align: start; */
 }
 @-webkit-keyframes colorRotation {
   0% {
@@ -258,7 +257,6 @@ main {
 #contact,
 #work {
   padding: 5% 3%;
-  /* scroll-snap-align: start; */
 }
 
 /* About */
@@ -432,7 +430,6 @@ main {
   -webkit-transition: 700ms all ease-in-out;
   -o-transition: 700ms all ease-in-out;
   transition: 700ms all ease-in-out;
-  /* overflow: hidden; */
   white-space: nowrap;
   will-change: background-image;
 }
