@@ -1,15 +1,7 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
 
 :root {
-  /* --dark: rgb(21, 21, 21); */
   --dark: rgb(11, 11, 11);
   --white: #f0f0f0;
   /* --highlightColor: #35ffa1; */
@@ -45,7 +37,7 @@ body {
   background-color: var(--dark);
   color: var(--white);
   -ms-scroll-chaining: none;
-      overscroll-behavior: none;
+  overscroll-behavior: none;
 }
 a {
   text-decoration: none;
@@ -57,8 +49,7 @@ a {
 }
 header nav a,
 .logo a,
-#copyright
-.footerLinkContainer,
+#copyright .footerLinkContainer,
 .socials i {
   font-size: 1.125rem;
   color: var(--dark);
@@ -75,14 +66,14 @@ header nav a,
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
   -webkit-filter: saturate(200%);
-          filter: saturate(200%);
+  filter: saturate(200%);
   z-index: 9999;
   text-align: center;
   pointer-events: none;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   opacity: 1;
   -webkit-transition: 700ms all ease;
   -o-transition: 700ms all ease;
@@ -90,7 +81,7 @@ header nav a,
 }
 .preloader img {
   -webkit-filter: grayscale(100%) brightness(200%);
-          filter: grayscale(100%) brightness(200%);
+  filter: grayscale(100%) brightness(200%);
 
   position: relative;
   top: 50%;
@@ -244,8 +235,10 @@ main {
   transform: translate(-50%, -50%);
   width: 60%;
   z-index: 99;
-  -webkit-filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
-          filter: saturate(200%) hue-rotate(2500deg) contrast(100%) drop-shadow(16px 16px 10px  black);
+  -webkit-filter: saturate(200%) hue-rotate(2500deg) contrast(100%)
+    drop-shadow(16px 16px 10px black);
+  filter: saturate(200%) hue-rotate(2500deg) contrast(100%)
+    drop-shadow(16px 16px 10px black);
 }
 
 .heroSection video {
@@ -272,8 +265,8 @@ main {
 #about h1 {
   position: relative;
   -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 #about h1::before {
   content: '001.';
@@ -323,8 +316,8 @@ main {
 #work h1 {
   position: relative;
   -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 #work a {
   color: var(--white);
@@ -346,96 +339,93 @@ main {
   font-weight: 900;
   content: '\f061';
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
-          transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   font-size: clamp(1.5rem, 3vw, 4rem);
   margin-left: 3rem;
   border-radius: 50%;
 }
 #work a:hover::after {
   -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-name: bounce-right;
-          animation-name: bounce-right;
+  animation-name: bounce-right;
   -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 /* Bounce Right Animation */
 @-webkit-keyframes bounce-right {
   0% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   10% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   30% {
     -webkit-transform: translate(30px, -50%);
-            transform: translate(30px, -50%);
+    transform: translate(30px, -50%);
   }
   50% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   57% {
     -webkit-transform: translate(1px, -50%);
-            transform: translate(1px, -50%);
+    transform: translate(1px, -50%);
   }
   64% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   100% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
 }
 @keyframes bounce-right {
   0% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   10% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   30% {
     -webkit-transform: translate(30px, -50%);
-            transform: translate(30px, -50%);
+    transform: translate(30px, -50%);
   }
   50% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   57% {
     -webkit-transform: translate(1px, -50%);
-            transform: translate(1px, -50%);
+    transform: translate(1px, -50%);
   }
   64% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
   100% {
     -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
+    transform: translate(0, -50%);
   }
 }
 .projectsLinkContainer {
-  /* background-image: linear-gradient(-45deg, #43e97b 0%, #38f9d7 100%); */
-  background-image: -o-linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
-  background-image: linear-gradient(45deg, #f9d423 0%, #ff4e50 100%);
-  background-image: -o-linear-gradient(86deg, #0fd850 0%, #f9f047 100%);
-  background-image: linear-gradient(4deg, #0fd850 0%, #f9f047 100%);
+  background-image: -o-linear-gradient(45deg, #0fd850 0%, #f9f047 100%);
+  background-image: linear-gradient(45deg, #0fd850 0%, #f9f047 100%);
   -webkit-filter: saturate(200%);
-          filter: saturate(200%);
+  filter: saturate(200%);
   background-size: 200% 200%;
   -webkit-animation: gradientBG 3s ease infinite;
   animation: gradientBG 3s ease infinite;
@@ -447,7 +437,6 @@ main {
   white-space: nowrap;
   will-change: background-image;
 }
-
 
 @-webkit-keyframes gradientBG {
   0% {
@@ -488,11 +477,11 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .nftContainer h2 {
   font-family: var(--hightlightFont);
@@ -502,8 +491,8 @@ main {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%);
-      -ms-transform: translate(-50%);
-          transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%);
   pointer-events: none;
   background: var(--dark);
 }
@@ -533,35 +522,35 @@ main {
 }
 .nft-img:hover {
   -webkit-filter: hue-rotate(360deg);
-          filter: hue-rotate(360deg);
+  filter: hue-rotate(360deg);
   -webkit-transform: scale(1.02);
-      -ms-transform: scale(1.02);
-          transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
   -webkit-transform: rotate3d(1, 1, 1, 10deg);
-          transform: rotate3d(1, 1, 1, 10deg);
+  transform: rotate3d(1, 1, 1, 10deg);
 }
 /* .nft-item:hover::before, .nft-item:hover::after {
   transform: rotate3d(1, 1, 1, 15deg) !important;
 } */
 .nft-item:first-of-type {
   -webkit-transform: translateY(10%);
-      -ms-transform: translateY(10%);
-          transform: translateY(10%);
+  -ms-transform: translateY(10%);
+  transform: translateY(10%);
 }
 .nft-item:nth-of-type(3) {
   -webkit-transform: translateY(-15%);
-      -ms-transform: translateY(-15%);
-          transform: translateY(-15%);
+  -ms-transform: translateY(-15%);
+  transform: translateY(-15%);
 }
 .nft-item:nth-of-type(4) {
   -webkit-transform: translateY(5%);
-      -ms-transform: translateY(5%);
-          transform: translateY(5%);
+  -ms-transform: translateY(5%);
+  transform: translateY(5%);
 }
 .nft-item:nth-of-type(2) {
   -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
 }
 .nft-item:first-of-type::before,
 .nft-item:nth-of-type(4)::before {
@@ -572,8 +561,8 @@ main {
   left: 50%;
   top: -12%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -591,8 +580,8 @@ main {
   left: 50%;
   bottom: -12%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   -webkit-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -648,9 +637,9 @@ main {
     calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
   will-change: transform;
   -webkit-animation: marquee 20s linear infinite;
-          animation: marquee 20s linear infinite;
+  animation: marquee 20s linear infinite;
   -webkit-animation-play-state: running;
-          animation-play-state: running;
+  animation-play-state: running;
 }
 #m2 {
   width: var(--tw2);
@@ -661,22 +650,22 @@ main {
 @-webkit-keyframes marquee {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes marquee {
   0% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
     -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
@@ -689,8 +678,8 @@ main {
   color: var(--white);
   mix-blend-mode: difference;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   font-size: clamp(2rem, 4vw, 3rem);
   white-space: nowrap;
 }
@@ -720,7 +709,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   will-change: transform;
 }
 .slider-inner-two {
@@ -733,7 +722,7 @@ main {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   will-change: transform;
 }
 .slider-main svg {
@@ -752,7 +741,7 @@ main {
 }
 .slider-main svg:hover {
   -webkit-filter: hue-rotate(360deg);
-          filter: hue-rotate(360deg);
+  filter: hue-rotate(360deg);
 }
 .projectNavbar {
   position: fixed;
@@ -762,11 +751,11 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   height: 100vh;
   padding: 2rem;
   top: 0;
@@ -851,12 +840,12 @@ main {
 
 .contactCTA {
   color: var(--white);
- 
-  
 }
 .contactCTAContent:hover > svg {
-  -webkit-filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
-          filter: drop-shadow(0px 0px 5px var(--highlightColor)) blur(1px);
+  -webkit-filter: drop-shadow(0px 0px 10px var(--highlightColor));
+  filter: drop-shadow(0px 0px 10px var(--highlightColor));
+  padding: 3px;
+  overflow: visible;
 }
 
 .contactCTAContent {
@@ -885,7 +874,7 @@ main {
 .contactCTA span:hover {
   color: var(--highlightColor);
   text-shadow: 0 0 2px var(--highlightColor), 0 0 5px var(--highlightColor),
-  0 0 20px var(--highlightColor);
+    0 0 20px var(--highlightColor);
 }
 
 /* Footer */
@@ -906,10 +895,10 @@ footer h4 {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .footerLinkContainer {
   margin-bottom: 4rem;
@@ -929,8 +918,8 @@ footer h4 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 .footerBottom a,
 #copyright span {
@@ -952,80 +941,80 @@ footer h4 {
   content: '\f062';
   margin-left: 0.75rem;
   -webkit-transform-origin: bottom;
-      -ms-transform-origin: bottom;
-          transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
   position: absolute;
 }
 .footerBottom a:hover::after {
   -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
   -webkit-animation-name: bounce;
-          animation-name: bounce;
+  animation-name: bounce;
   -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
 }
 
 /* Bounce Animation of Back to Top Arrow */
 @-webkit-keyframes bounce {
   0% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
     -webkit-transform: scale(1.1, 0.9) translateY(0);
-            transform: scale(1.1, 0.9) translateY(0);
+    transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
     -webkit-transform: scale(0.9, 1.1) translateY(-20px);
-            transform: scale(0.9, 1.1) translateY(-20px);
+    transform: scale(0.9, 1.1) translateY(-20px);
   }
   50% {
     -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    transform: scale(1.05, 0.95) translateY(0);
   }
   57% {
     -webkit-transform: scale(1, 1) translateY(-1px);
-            transform: scale(1, 1) translateY(-1px);
+    transform: scale(1, 1) translateY(-1px);
   }
   64% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
 @keyframes bounce {
   0% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   10% {
     -webkit-transform: scale(1.1, 0.9) translateY(0);
-            transform: scale(1.1, 0.9) translateY(0);
+    transform: scale(1.1, 0.9) translateY(0);
   }
   30% {
     -webkit-transform: scale(0.9, 1.1) translateY(-20px);
-            transform: scale(0.9, 1.1) translateY(-20px);
+    transform: scale(0.9, 1.1) translateY(-20px);
   }
   50% {
     -webkit-transform: scale(1.05, 0.95) translateY(0);
-            transform: scale(1.05, 0.95) translateY(0);
+    transform: scale(1.05, 0.95) translateY(0);
   }
   57% {
     -webkit-transform: scale(1, 1) translateY(-1px);
-            transform: scale(1, 1) translateY(-1px);
+    transform: scale(1, 1) translateY(-1px);
   }
   64% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
   100% {
     -webkit-transform: scale(1, 1) translateY(0);
-            transform: scale(1, 1) translateY(0);
+    transform: scale(1, 1) translateY(0);
   }
 }
 
@@ -1065,7 +1054,7 @@ header nav a,
   }
   .marquee span {
     -webkit-animation-play-state: paused;
-            animation-play-state: paused;
+    animation-play-state: paused;
   }
 }
 /* Large Desktop Screens */
@@ -1141,18 +1130,18 @@ header nav a,
     padding: 0 5%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
   }
   #about h1,
   #contact h1,
   #work h1 {
     -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
     font-size: 7vw;
     text-align: left;
     width: 100%;
@@ -1197,6 +1186,11 @@ header nav a,
   }
   .contactCTAContent span {
     font-size: 3vw;
+  }
+  .contactCTAContent:hover > svg {
+    -webkit-filter: drop-shadow(0px 0px 0px var(--highlightColor));
+    filter: drop-shadow(0px 0px 0px var(--highlightColor));
+    padding: 0px;
   }
   /* Footer */
   footer {
@@ -1255,13 +1249,17 @@ header nav a,
   .nftContainer {
     height: 100%;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .nft-item {
     width: calc(43vw - 1.5rem);
-    height: calc((43vw -1.5rem) * (5 / 4));
+    height: calc((43vw - 1.5rem) * (5 / 4));
     margin-bottom: 2.5rem;
-    overflow: hidden;
+  }
+  .nft-item::before,
+  .nft-item::after {
+    display: none;
   }
 
   .nftContainer h2 {
@@ -1270,32 +1268,32 @@ header nav a,
   }
   .nft-item:first-of-type {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
   .nft-item:nth-of-type(3) {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
   .nft-item:nth-of-type(4) {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
   .nft-item:nth-of-type(2) {
     -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-            transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
   #work a {
     left: 0;
   }
-  .projectsLinkContainer{
+  .projectsLinkContainer {
     padding: 4rem;
   }
-  #work h3{
-    margin-top: 0rem;
+  #work h3 {
+    margin-top: 3rem;
     padding: 1rem;
   }
 
@@ -1355,10 +1353,10 @@ header nav a,
   .footerBottom {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
