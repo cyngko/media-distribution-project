@@ -16,6 +16,7 @@
 #pointer-ring {
   background: white;
   mix-blend-mode: difference;
+  transition: 50ms ease-in-out;
 }
 h1 {
   font-size: 4vw;
@@ -300,10 +301,8 @@ main {
 #slogan a:hover {
   text-shadow: 0 0 2px var(--highlightColor), 0 0 5px var(--highlightColor),
     0 0 20px var(--highlightColor);
-  /* -webkit-filter: hue-rotate(360deg);
-  filter: hue-rotate(360deg); */
-  -webkit-animation: colorRotation 3s infinite;
-  animation: colorRotation 3s infinite;
+  -webkit-animation: colorRotation 2s infinite;
+  animation: colorRotation 2s infinite;
 }
 
 /* Work */
@@ -529,9 +528,6 @@ main {
   -webkit-transform: rotate3d(1, 1, 1, 10deg);
   transform: rotate3d(1, 1, 1, 10deg);
 }
-/* .nft-item:hover::before, .nft-item:hover::after {
-  transform: rotate3d(1, 1, 1, 15deg) !important;
-} */
 .nft-item:first-of-type {
   -webkit-transform: translateY(10%);
   -ms-transform: translateY(10%);
