@@ -15,8 +15,8 @@
 }
 #pointer-ring {
   background: white;
-  mix-blend-mode: difference;
-  transition: 50ms ease-in-out;
+  mix-blend-mode: exclusion;
+  /* transition: 20ms ease-in-out; */
 }
 h1 {
   font-size: 4vw;
@@ -514,7 +514,7 @@ main {
   -webkit-transition: all 600ms ease-in-out;
   -o-transition: all 600ms ease-in-out;
   transition: all 600ms ease-in-out;
-  border-radius: 3px;
+  border-radius: 10px;
 }
 .nft-img:hover {
   -webkit-filter: hue-rotate(360deg);
@@ -605,6 +605,16 @@ main {
   -webkit-transition: all 700ms ease-in-out;
   -o-transition: all 700ms ease-in-out;
   transition: all 700ms ease-in-out;
+}
+.nft-item:hover::after {
+  -webkit-transform: rotate3d(1, 1, 1, 10deg);
+  transform: rotate3d(1, 1, 1, 10deg);
+  opacity: 0;
+}
+.nft-item:hover::before {
+  -webkit-transform: rotate3d(1, 1, 1, 10deg);
+  transform: rotate3d(1, 1, 1, 10deg);
+  /* opacity: 0; */
 }
 #work h3 {
   width: 50%;

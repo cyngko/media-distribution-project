@@ -155,7 +155,7 @@ function customPointer() {
     pointerJSScript.onload = () => {
       init_pointer({
         pointerColor: 'var(--white)', // Css color
-        ringSize: 10, // Pixels
+        ringSize: 12, // Pixels
         ringClickSize: 5, // Pixels when clicking
       });
     };
