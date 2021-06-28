@@ -61,7 +61,7 @@ function animate() {
   for (let i = 0; i < imageItems.length; i++) {
     imageItems[i].render();
     if (current < target - 50 || current > target + 50) {
-      transformElement(imageItems[i].el, 'scale(0.8)');
+      transformElement(imageItems[i].el, 'scale(0.9)');
     } else {
       transformElement(imageItems[i].el, 'scale(1)');
     }

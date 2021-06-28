@@ -113,24 +113,24 @@ window.onscroll = function () {
     navigation.style.mixBlendMode = 'initial';
   } else {
     navigation.style.backgroundColor = '';
-    document.querySelector('.logo a').style.color = 'var(--dark)';
+    // document.querySelector('.logo a').style.color = 'var(--dark)';
 
     navLinks.forEach((link) => {
-      link.style.color = 'var(--dark)';
+      // link.style.color = 'var(--dark)';
       link.addEventListener('mouseover', () => {
         link.style.color = 'var(--highlightColor)';
       });
       link.addEventListener('mouseleave', () => {
-        link.style.color = 'var(--dark)';
+        // link.style.color = 'var(--dark)';
       });
     });
     socialIcons.forEach((icon) => {
-      icon.style.color = 'var(--dark)';
+      // icon.style.color = 'var(--dark)';
       icon.addEventListener('mouseover', () => {
         icon.style.color = 'var(--highlightColor)';
       });
       icon.addEventListener('mouseleave', () => {
-        icon.style.color = 'var(--dark)';
+        // icon.style.color = 'var(--dark)';
       });
     });
   }

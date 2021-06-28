@@ -21,6 +21,10 @@
 h1 {
   font-size: 4vw;
 }
+h1:hover {
+  animation: glitch 200ms ease-in-out;
+  animation-iteration-count:2;
+}
 h2 {
   font-size: 3vw;
   position: relative;
@@ -48,13 +52,6 @@ a {
   width: 100%;
   height: 100%;
 }
-header nav a,
-.logo a,
-#copyright .footerLinkContainer,
-.socials i {
-  font-size: 1.125rem;
-  color: var(--dark);
-}
 /* Preloader */
 .preloader {
   height: 100vh;
@@ -62,10 +59,7 @@ header nav a,
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--dark);
-  background-size: 200% 200%;
-  -webkit-animation: gradientBG 3s ease infinite;
-  animation: gradientBG 3s ease infinite;
+  background: var(--dark);
   -webkit-filter: saturate(200%);
   filter: saturate(200%);
   z-index: 9999;
@@ -121,22 +115,20 @@ header {
   -o-transition: all 400ms ease-in-out;
   transition: all 400ms ease-in-out;
   z-index: 100;
-  font-size: 1.25vw;
   background: rgba(256, 256, 256, 0);
 }
 
-header:hover {
-  background: rgba(255, 255, 255, 0.5);
-}
-header:hover > a {
-  color: var(--white) !important;
-}
 header a {
   color: var(--white);
 }
 header nav span {
   font-family: var(--hightlightFont);
-  font-size: clamp(0.75rem, 0.5vw, 1rem);
+  font-size: clamp(1rem, 0.5vw, 1.5rem);
+}
+header nav a,
+.logo a,
+.socials i {
+  font-size: clamp(1rem, 1.2vw, 3rem) !important;
 }
 header nav a {
   margin: 0 15px;
@@ -158,23 +150,7 @@ header nav a:hover {
 .logo a:hover {
   color: var(--highlightColor) !important;
 }
-.logo::after {
-  content: '';
-  width: 100%;
-  position: absolute;
-  bottom: -0px;
-  left: 0;
-  height: 3px;
-  background-color: var(--highlightColor);
-  opacity: 0;
-  -webkit-transition: all 300ms;
-  -o-transition: all 300ms;
-  transition: all 300ms;
-}
-.logo:hover::after {
-  opacity: 1;
-  bottom: -5px;
-}
+
 
 .socials {
   display: -webkit-box;
@@ -317,9 +293,9 @@ main {
   transform: rotate(-90deg);
 }
 #work a {
-  color: var(--white);
   color: var(--dark);
   font-size: clamp(1rem, 2vw, 2rem);
+  font-style: italic;
   position: relative;
   text-decoration: underline;
   left: 50%;
@@ -329,7 +305,8 @@ main {
 }
 
 #work a:hover {
-  letter-spacing: 0.5px;
+  /* letter-spacing: 0.5px; */
+  animation: glitch 200ms ease-in-out;
 }
 #work a::after {
   font-family: 'Font Awesome 5 Free';
@@ -615,6 +592,7 @@ main {
   -webkit-transform: rotate3d(1, 1, 1, 10deg);
   transform: rotate3d(1, 1, 1, 10deg);
   /* opacity: 0; */
+  animation: glitch 300ms infinite ease-in-out;
 }
 #work h3 {
   width: 50%;
@@ -719,7 +697,7 @@ main {
   position: absolute;
   top: 40vh;
   left: 40vw;
-  width: 120%;
+  width: 170%;
   height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -878,6 +856,42 @@ main {
   color: var(--highlightColor);
   text-shadow: 0 0 2px var(--highlightColor), 0 0 5px var(--highlightColor),
     0 0 20px var(--highlightColor);
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
 }
 
 /* Footer */
@@ -1042,12 +1056,8 @@ footer ul li:first-child {
 footer a:hover {
   color: var(--highlightColor);
 }
-
-header nav a,
-.logo a,
-.socials a,
 .footerLinkContainer {
-  font-size: clamp(0.75rem, 1vw, 1rem);
+  font-size: clamp(1rem, 1vw, 1.2rem);
 }
 
 /* Responsiveness + Other */
@@ -1180,6 +1190,7 @@ header nav a,
   .nft-item:first-of-type::before {
     top: 112%;
   }
+  
 
   /* Contact */
 
